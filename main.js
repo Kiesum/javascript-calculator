@@ -1,51 +1,50 @@
 $(function() {
 
+  var clearedValue = '0';
   var currentValue = '';
   var equation = '';
   var isResult = false;
   var needsOperator; 
 
   var screen = $('.screen');
+  var equationScreen = $('.equation');
 
   function inputNumbers(number) {
     currentValue += number;
+    equation += number;
     displayNumber(currentValue);
   }
 
   function displayNumber(currentValue) {
     screen.html(currentValue)
-  }
-
-  function displayOperator(operator) {
-    screen.html(operator);
+    equationScreen.html(equation);
   }
 
   function add() {
-    equation += currentValue + ' + ' ;
+    equation += ' + ';
     currentValue = '';
-    displayOperator('+');
+    displayNumber();
   }
 
   function subtract() {
-    equation += currentValue + ' - ' ;
+    equation += ' - ';
     currentValue = '';
-    displayOperator('-');
+    displayNumber();
   }
 
   function multiply() {
-    equation += currentValue + ' * ' ;
+    equation += ' * ';
     currentValue = '';
-    displayOperator('x');
+    displayNumber();
   }
 
   function divide() {
-    equation += currentValue + ' / ' ;
+    equation += ' / ';
     currentValue = '';
-    displayOperator('/');
+    displayNumber();
   }
 
   function equals() {
-    equation += currentValue;
     var result = eval(equation);
     currentValue = '';
     equation = result;
@@ -53,14 +52,26 @@ $(function() {
     displayResult(result);
   }
 
+  function addDecimal() {
+    isResult = false;
+    currentValue += '.';
+    equation += '.';
+    displayNumber(currentValue);
+  }
+
   function clear() {
-    currentValue = '0';
+    currentValue = '';
     equation = '';
     clearScreen();
   }
 
+  function hasDecimal() {
+    return currentValue.includes('.');
+  }
+
   function clearScreen() {
-    screen.html(currentValue);
+    screen.html(clearedValue);
+    equationScreen.html(clearedValue)
   }
 
   function displayResult(result) {
@@ -77,7 +88,7 @@ $(function() {
     }
   });
 
-  $('.operators input').on('click', function() {
+  $('.operator').on('click', function() {
     isResult = false;
     if (needsOperator) {
       switch ($(this).attr('value')) {
@@ -104,7 +115,16 @@ $(function() {
           console.log('can not find');
       }
     };
-  })
+  });
+
+  $('.decimal').on('click', function() {
+    if (!hasDecimal() && isResult) {
+      equation = '';
+      addDecimal();
+    } else if (!hasDecimal()){
+      addDecimal();
+    }
+  });
 
   $('.clear').on('click', function() {
     clear();

@@ -9,40 +9,40 @@
 </head>
 <body>
   <h1>Calculator</h1>
-
-  <div class='screen'>0</div>
+  <div class='screen-container'>
+    <div class='screen'>0</div>
+    <div class='equation'>0</div>
+  </div>
   <div class='buttons'>
-    <div class='digits'>
-      <div class='row1'>
-        <input type='button' class='number seven' value='7'></input>
-        <input type='button' class='number eight' value='8'></input>
-        <input type='button' class='number nine' value='9'></input>
-      </div>
-      <div class='row2'>
-        <input type='button' class='number four' value='4'></input>
-        <input type='button' class='number five' value='5'></input>
-        <input type='button' class='number six' value='6'></input>
-      </div>
-      <div class='row3'>
-        <input type='button' class='number one' value='1'></input>
-        <input type='button' class='number two' value='2'></input>
-        <input type='button' class='number three' value='3'></input>
-      </div>
+    <div class='row row1'>
+      <input type='button'></input>
+      <input type='button'></input>
+      <input type='button' class='clear' value='AC'></input>
+      <input type='button' class='operator divide' value='/'></input>
+    </div>
+    <div class='row row2'>
+      <input type='button' class='number seven' value='7'></input>
+      <input type='button' class='number eight' value='8'></input>
+      <input type='button' class='number nine' value='9'></input>
+      <input type='button' class='operator multiply' value='x'></input>
+    </div>
+    <div class='row row3'>
+      <input type='button' class='number four' value='4'></input>
+      <input type='button' class='number five' value='5'></input>
+      <input type='button' class='number six' value='6'></input>
+      <input type='button' class='operator substract' value='-'></input>
+    </div>
+    <div class='row row4'>
+      <input type='button' class='number one' value='1'></input>
+      <input type='button' class='number two' value='2'></input>
+      <input type='button' class='number three' value='3'></input>
+      <input type='button' class='operator add' value='+'></input>
+    </div>
+    <div class='row row5'>
       <input type='button' class='number zero' value='0'></input>
+      <input type='button' class='decimal' value='.'></input>
+      <input type='button' class='operator equals' value='='></input>
     </div>
-    <div class='operators'>
-      <input type='button' class='add' value='+'></input>
-      <input type='button' class='substract' value='-'></input>
-      <input type='button' class='multiply' value='x'></input>
-      <input type='button' class='divide' value='/'></input>
-      <input type='button' class='equals' value='='></input>
-     <!--  <button class='add'>+</button>
-      <button class='subtract'>-</button>
-      <button class='multiply'>x</button>
-      <button class='divide'>/</button>
-      <button class='equals'>=</button> -->
-    </div>
-    <input type='button' class='clear' value='AC'></input>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

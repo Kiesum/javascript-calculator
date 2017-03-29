@@ -1,4 +1,48 @@
-.screen {
-  width: 200px;
-  height: 50px;
+
+.row, .screen-container {
+  width: 300px;
+  margin: auto;
 }
+
+.screen, .equation {
+  width: 96%;
+  border-style: solid;
+  border-color: grey;
+  box-sizing: border-box;
+  padding: 0 10px;
+  word-break: break-all;
+  text-align: right;
+}
+
+.screen {
+  border-width: 1px 1px 0 1px;
+  font-size: 68px;
+}
+
+.equation {
+  border-width: 0px 1px 0 1px;
+}
+
+input {
+    float: left;
+    width: 24%;
+    height: 72px;
+    background: transparent;
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px 0 1px 1px;
+    font-size: 24px;
+}
+
+input.zero {
+  width: 48%;
+}
+
+.row1 input, .row2 input, .row3 input, .row4 input {
+    border-bottom: none;
+}
+
+input:nth-child(4), input.equals {
+  border-width: 1px;
+}
+
