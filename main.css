@@ -1,3 +1,6 @@
+body {
+  font-family: sans-serif;
+}
 
 .row, .screen-container {
   width: 300px;
@@ -7,39 +10,60 @@
 .screen, .equation {
   width: 96%;
   border-style: solid;
-  border-color: grey;
+  border-color: white;
   box-sizing: border-box;
   padding: 0 10px;
   word-break: break-all;
   text-align: right;
+  background: #4e565a;
+  color: white;
+  overflow: scroll;
 }
 
 .screen {
   border-width: 1px 1px 0 1px;
-  font-size: 68px;
+  font-size: 65px;
+  height: 68px;
 }
 
 .equation {
-  border-width: 0px 1px 0 1px;
+  height: 36px;
+  border-width: 1px 1px 0 1px;
+  overflow: hidden;
 }
 
 input {
     float: left;
     width: 24%;
     height: 72px;
-    background: transparent;
+    background: #e0e0e0;
     border-style: solid;
-    border-color: grey;
+    border-color: white;
     border-width: 1px 0 1px 1px;
     font-size: 24px;
+    color: #333333;
+}
+
+input:focus {
+    outline: none;
 }
 
 input.zero {
   width: 48%;
 }
 
+input.operator {
+  background: #ffad1a;
+  color: white;
+
+}
+
 .row1 input, .row2 input, .row3 input, .row4 input {
     border-bottom: none;
+}
+
+.row1 input {
+  border-top: none;
 }
 
 input:nth-child(4), input.equals {

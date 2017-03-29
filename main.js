@@ -12,7 +12,24 @@ $(function() {
   function inputNumbers(number) {
     currentValue += number;
     equation += number;
+    shrinkNumberSize(currentValue);
     displayNumber(currentValue);
+  }
+
+  function shrinkNumberSize(number) {
+    if (number.length < 8) {
+      screen.css({'font-size': '65px'});
+    } else if (number.length >= 8 && number.length < 10) {
+      screen.css({'font-size': '55px'});
+    } else if (number.length >= 10 && number.length < 12) {
+      screen.css({'font-size': '45px'});
+    } else if (number.length >= 12 && number.length < 14) {
+      screen.css({'font-size': '35px'});
+    } else if (number.length >= 14 && number.length < 16) {
+      screen.css({'font-size': '25px'});
+    } else if (number.length >= 16){
+      screen.css({'font-size': '18px'});
+    }
   }
 
   function displayNumber(currentValue) {
@@ -63,6 +80,7 @@ $(function() {
     currentValue = '';
     equation = '';
     clearScreen();
+    shrinkNumberSize(currentValue);
   }
 
   function hasDecimal() {
@@ -75,6 +93,7 @@ $(function() {
   }
 
   function displayResult(result) {
+    shrinkNumberSize(result.toString());
     screen.html(result);
   }
   
